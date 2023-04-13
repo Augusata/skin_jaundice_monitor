@@ -1,8 +1,8 @@
-clear all;clc; close all;
+clear all; clc; close all;
 
 
-tar1=imread("tar1.jpg");
-tar2=imread("tar2.jpg");
+tar1 = imread("tar1");
+tar2 = imread("tar2");
 
 tar1 = im2double(tar1);
 tar2 = im2double(tar2);
@@ -70,7 +70,7 @@ imagesc(tar1)
 
 %Now for tar2 meow
 
-tar2=imrotate(tar2,-90);
+tar2 = imrotate(tar2,-90);
 tar2=imresize(tar2,2);
 figure(2)
 imagesc(tar2);
