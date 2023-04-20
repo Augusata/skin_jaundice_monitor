@@ -1,0 +1,222 @@
+clear all; clc; close all;
+
+%% read images
+
+mg05 = imread("0.5mg_cropped.jpeg");
+mg1 = imread("1mg_cropped.jpeg");
+mg15 = imread("1.5mg_cropped.jpeg");
+mg2 = imread("2mg_cropped.jpeg");
+mg25 = imread("2.5mg_cropped.jpeg");
+mg3 = imread("3mg_cropped.jpeg");
+mg35 = imread("3.5mg_cropped.jpeg");
+mg4 = imread("4mg_cropped.jpeg");
+
+mg05 = im2double(mg05);
+mg1 = im2double(mg1);
+mg15 = im2double(mg15);
+mg2 = im2double(mg2);
+mg25 = im2double(mg25);
+mg3 = im2double(mg3);
+mg35 = im2double(mg35);
+mg4 = im2double(mg4);
+figure(1)
+imshow(mg1);
+figure(2)
+imshow(mg15);
+
+
+center = [650 1320];
+radius = 50;
+
+[m, n, ~] = size(mg05);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg05(repmat(mask, [1 1 3])), [], 3);
+avg_colory05 = mean(pixels);
+
+center = [650 410];
+radius = 50;
+
+[m, n, ~] = size(mg05);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg05(repmat(mask, [1 1 3])), [], 3);
+avg_colorc05 = mean(pixels);
+
+yellow05 = sum(avg_colorc05(1:2))-sum(avg_colory05(1:2));
+
+
+center = [670 1310];
+radius = 50;
+
+[m, n, ~] = size(mg05);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg1(repmat(mask, [1 1 3])), [], 3);
+avg_colory1 = mean(pixels);
+
+center = [680 450];
+radius = 50;
+
+[m, n, ~] = size(mg1);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg1(repmat(mask, [1 1 3])), [], 3);
+avg_colorc1 = mean(pixels);
+
+yellow1 = sum(avg_colorc1(1:2))-sum(avg_colory1(1:2));
+
+
+
+center = [670 1280];
+radius = 50;
+
+[m, n, ~] = size(mg15);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg15(repmat(mask, [1 1 3])), [], 3);
+avg_colory15 = mean(pixels);
+
+center = [650 410];
+radius = 50;
+
+[m, n, ~] = size(mg15);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg15(repmat(mask, [1 1 3])), [], 3);
+avg_colorc15 = mean(pixels);
+
+yellow15 = sum(avg_colorc15(1:2))-sum(avg_colory15(1:2));
+
+
+center = [650 1320];
+radius = 50;
+
+[m, n, ~] = size(mg2);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg2(repmat(mask, [1 1 3])), [], 3);
+avg_colory2 = mean(pixels);
+
+center = [650 410];
+radius = 50;
+
+[m, n, ~] = size(mg2);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg2(repmat(mask, [1 1 3])), [], 3);
+avg_colorc2 = mean(pixels);
+
+yellow2 = sum(avg_colorc2(1:2))-sum(avg_colory2(1:2));
+
+
+
+center = [650 1320];
+radius = 50;
+
+[m, n, ~] = size(mg25);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg25(repmat(mask, [1 1 3])), [], 3);
+avg_colory25 = mean(pixels);
+
+center = [650 410];
+radius = 50;
+
+[m, n, ~] = size(mg25);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg25(repmat(mask, [1 1 3])), [], 3);
+avg_colorc25 = mean(pixels);
+
+yellow25 = sum(avg_colorc25(1:2))-sum(avg_colory25(1:2));
+
+
+
+
+center = [650 1320];
+radius = 50;
+
+[m, n, ~] = size(mg3);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg3(repmat(mask, [1 1 3])), [], 3);
+avg_colory3 = mean(pixels);
+
+center = [650 410];
+radius = 50;
+
+[m, n, ~] = size(mg3);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg3(repmat(mask, [1 1 3])), [], 3);
+avg_colorc3 = mean(pixels);
+
+yellow3 = sum(avg_colorc3(1:2))-sum(avg_colory3(1:2));
+
+
+
+
+center = [650 1320];
+radius = 50;
+
+[m, n, ~] = size(mg35);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg35(repmat(mask, [1 1 3])), [], 3);
+avg_colory35 = mean(pixels);
+
+center = [650 410];
+radius = 50;
+
+[m, n, ~] = size(mg35);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg35(repmat(mask, [1 1 3])), [], 3);
+avg_colorc35 = mean(pixels);
+
+yellow35 = sum(avg_colorc35(1:2))-sum(avg_colory35(1:2));
+
+
+
+
+
+center = [650 1320];
+radius = 50;
+
+[m, n, ~] = size(mg4);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg4(repmat(mask, [1 1 3])), [], 3);
+avg_colory4 = mean(pixels);
+
+center = [650 410];
+radius = 50;
+
+[m, n, ~] = size(mg4);
+[X, Y] = meshgrid(1:n, 1:m);
+mask = ((X - center(1)).^2 + (Y - center(2)).^2) <= radius^2;
+
+pixels = reshape(mg4(repmat(mask, [1 1 3])), [], 3);
+avg_colorc4 = mean(pixels);
+
+yellow4 = sum(avg_colorc4(1:2))-sum(avg_colory4(1:2));
+
+
+
+avg_colory05=avg_colory
